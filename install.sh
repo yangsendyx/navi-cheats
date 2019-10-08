@@ -1,15 +1,17 @@
 #!/bin/bash
 
-version=$(navi --version)
 tarname="cheats.tar.gz"
-prefix="/usr/local/Cellar/navi/"
-suffix="/libexec"
-path=${prefix}${version}${suffix}
+{ # try
+    path="/usr/local/Cellar/navi/$(navi --version)/libexec"
+    echo "navi path is: $path"
 
-$(tar czf ${tarname} ./cheats)
-$(rm -rf "${path}/cheats" )
-$(mv ${tarname} "${path}/${tarname}")
+    tar czf ${tarname} ./cheats
+    rm -rf "$path/cheats"
+    mv $tarname "$path/$tarname"
 
-cd ${path}
-$(tar xzf ${tarname})
-$(rm -rf "${path}/${tarname}" )
+    cd $path
+    tar xzf $tarname
+    rm -rf "$path/$tarname"
+} || { # catch
+    exit 1
+}
