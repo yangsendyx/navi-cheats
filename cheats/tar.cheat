@@ -1,0 +1,10 @@
+% tar, zip, gzip, compression
+
+# 压缩打包文件/文件夹
+tar czvf <filename>.tar.gz <files_or_dir>
+
+# 解压缩 .tar.gz 文件到当前目录
+tar xzvf <targz_file>
+
+# 解压缩 .tar.gz 文件到指定目录
+tar xzvf <targz_file> -C <output_path>

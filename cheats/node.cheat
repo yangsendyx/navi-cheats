@@ -1,0 +1,5 @@
+% node
+
+# 重置node-sass安装脚本里sass包下载地址并安装
+SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm i node-sass
+

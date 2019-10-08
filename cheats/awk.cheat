@@ -1,0 +1,4 @@
+% awk, string
+
+# 输出最后一列
+awk '{print $NF}'

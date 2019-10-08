@@ -1,0 +1,34 @@
+% brew, cask
+
+# 升级 brew (内置)
+brew update
+
+# 升级 brew (master分支)
+cd "$(brew --repo)" && git fetch && git reset --hard origin/master && brew update
+
+# 升级所有可更新的 brew 安装的包
+brew upgrade
+
+# 获取安装包的信息
+brew info <package>
+
+# 获取 cask 安装的包信息
+brew cask info <casks>
+
+# 安装包
+brew install <package>
+
+# cask 方式安装
+brew cask install <casks>
+
+# 卸载包
+brew uninstall <installed>
+
+# cask 方式卸载
+brew cask uninstall <caskinstalled>
+
+# 编辑包的元信息 ruby 文件
+brew edit <package>
+
+# 编辑 cask 包的元信息 ruby 文件
+brew cask edit <casks>
