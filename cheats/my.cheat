@@ -3,6 +3,12 @@
 # 杀掉指定端口进程(匹配到的最后一个进程)
 lsof -i :<port> | awk '{l=$2} END {print l}' | xargs kill
 
+# 列出指定端口进程
+lsof -i :<port>
+
+# 杀死指定进程
+kill -9 <process_id>
+
 # 列出链接到指定端口的所有ip地址
 netstat -tn 2>/dev/null | grep :<port> | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head
 
@@ -32,3 +38,14 @@ cd ~/Library/MobileDevice/"Provisioning Profiles"
 
 # 修改文件/文件夹拥有者为当前账号
 sudo chown -R $(whoami) <file_or_dirpath>
+
+# 压缩打包文件/文件夹
+tar czvf <filename>.tar.gz <files_or_dir>
+
+# 解压缩 .tar.gz 文件到当前目录
+tar xzvf <targz_file>
+
+# 解压缩 .tar.gz 文件到指定目录
+tar xzvf <targz_file> -C <output_path>
+
+# process_id: ps  --- --headers 1 --column 1

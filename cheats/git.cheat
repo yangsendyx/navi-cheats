@@ -10,7 +10,7 @@ git config --global user.email <user_email>
 git remote -v
 
 # 添加远程主机(指定地址)
-git remote add <remote_name> <remote_url>
+git remote add <new_remote_name> <remote_url>
 
 # 重命名远程主机名
 git remote rename <old_remote_name> <new_remote_name>
@@ -25,7 +25,7 @@ git checkout -b <new_branch>
 git checkout -b <new_branch> <commit>
 
 # 切换分支
-git checkout <branch>
+git checkout <branch_name>
 
 # 显示当前分支状态
 git status
@@ -54,9 +54,6 @@ git commit --amend
 # 推送指定分支到指定主机
 git push -u <remote_name> <branch_name>
 
-# 推送指定分支覆盖指定主机下的指定分支
-git push <remote_name> <branch>:<branch_to_overwrite>
-
 # 强制推送指定分支到指定主机，忽略版本差异
 git push <remote_name> <branch_name> -f
 
@@ -72,11 +69,11 @@ git merge --abort
 # 合并指定commit到当前分支
 git cheery-pick <commit>
 
-# 显示提交日志
-git log
+# 显示日志
+git log --all --decorate --oneline --graph --pretty=format:"%C(red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cn - %cd)%Creset" --abbrev-commit --date=format:"%Y/%m/%d %H:%M:%S"
 
-# 显示格式化后的提交日志
-git log --all --decorate --oneline --graph
+# 显示远程分支提交日志
+git log remotes/<remote_name>/<branch_name>
 
 # 保存当前进度(暂存区+工作区)，恢复到上一次commit状态
 git stash
@@ -108,3 +105,5 @@ git rebase <branch_name>
 # 继续rebase被终止的剩余步骤(保存合并信息、解决冲突后继续应用补丁文件)
 git rebase --continue
 
+# remote_name: git remote
+# branch_name: git branch --- --headers 1 --column 2
