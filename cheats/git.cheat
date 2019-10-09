@@ -70,7 +70,7 @@ git merge --abort
 git cheery-pick <commit>
 
 # 显示日志
-git log --all --decorate --oneline --graph --pretty=format:"%C(red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cn - %cd)%Creset" --abbrev-commit --date=format:"%Y/%m/%d %H:%M:%S"
+git log --all --decorate --oneline --graph --pretty=format:"%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(blue)%cn <%ae>%Creset %C(green)(%cd)%Creset" --abbrev-commit --date=format:"%Y/%m/%d %H:%M:%S"
 
 # 显示远程分支提交日志
 git log remotes/<remote_name>/<branch_name>
@@ -104,6 +104,9 @@ git rebase <branch_name>
 
 # 继续rebase被终止的剩余步骤(保存合并信息、解决冲突后继续应用补丁文件)
 git rebase --continue
+
+# 停止rebase的所有未完成操作
+git rebase --abort
 
 # remote_name: git remote
 # branch_name: git branch --- --headers 1 --column 2
