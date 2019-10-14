@@ -18,6 +18,12 @@ git remote rename <old_remote_name> <new_remote_name>
 # 删除远程主机
 git remote remove <remote_name>
 
+# 删除本地分支
+git branch -D <branch_name>
+
+# 删除远程分支
+git push <remote_name> :<del_branch_name>
+
 # 从当前分支创建新分支
 git checkout -b <new_branch>
 

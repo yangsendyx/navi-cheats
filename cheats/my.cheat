@@ -1,7 +1,10 @@
 % my
 
-# 杀掉指定端口进程(匹配到的最后一个进程)
-lsof -i:<port> | awk '{l=$2} END {print l}' | xargs kill
+# 按端口号筛选进程并杀掉
+lsof -i:<port> | awk 'NR>1 {print $0}' | fzf | awk '{print $2}' | xargs kill
+
+# 按名称筛选进程并杀掉
+ps | grep <process_name> | awk 'NR>1 {print p} {p=$0}' | fzf | awk '{print $1}' | xargs kill
 
 # 列出指定端口进程
 lsof -i:<port>
@@ -45,6 +48,3 @@ tar xzvf <targz_file>
 # 解压缩 .tar.gz 文件到指定目录
 tar xzvf <targz_file> -C <output_path>
 
-kill -9 <process_id>
-
-$ process_id: lsof -i:4108 --- --headers 1 --column 2
