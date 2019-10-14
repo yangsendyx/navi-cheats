@@ -46,9 +46,5 @@ tar xzvf <targz_file>
 tar xzvf <targz_file> -C <output_path>
 
 kill -9 <process_id>
-docker image rm <image_id>
-docker stop <container_id>
 
-$ process_id: ps --- --headers 1 --column 1
-$ image_id: docker images --- --headers 1 --column 3
-$ container_id: docker ps --- --headers 1 --column 1
+$ process_id: lsof -i:4108 --- --headers 1 --column 2
