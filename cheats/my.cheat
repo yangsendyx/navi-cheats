@@ -1,10 +1,10 @@
 % my
 
 # 杀掉指定端口进程(匹配到的最后一个进程)
-lsof -i :<port> | awk '{l=$2} END {print l}' | xargs kill
+lsof -i:<port> | awk '{l=$2} END {print l}' | xargs kill
 
 # 列出指定端口进程
-lsof -i :<port>
+lsof -i:<port>
 
 # 列出链接到指定端口的所有ip地址
 netstat -tn 2>/dev/null | grep :<port> | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head

@@ -108,5 +108,5 @@ git rebase --continue
 # 停止rebase的所有未完成操作
 git rebase --abort
 
-$ remote_name: git remote | awk '{print $NF}'
+$ remote_name: git remote | awk '{print $NF}' --- --column 1
 $ branch_name: git branch | awk '{print $NF}' --- --column 1
