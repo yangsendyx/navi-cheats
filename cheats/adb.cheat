@@ -1,0 +1,7 @@
+% adb
+
+# 清除logcat
+adb logcat -c
+
+# 打印 logcat 并输出至桌面 adb.log
+adb logcat > ~/Desktop/adb.log
