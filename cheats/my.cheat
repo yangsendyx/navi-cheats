@@ -4,7 +4,7 @@
 lsof -i:<port> | awk 'NR>1 {print $0}' | fzf | awk '{print $2}' | xargs kill
 
 # 按名称筛选进程并杀掉
-ps | grep <process_name> | awk 'NR>1 {print p} {p=$0}' | fzf | awk '{print $1}' | xargs kill
+ps aux | grep <process_name> | fzf | awk '{print $2}' | xargs kill
 
 # 列出指定端口进程
 lsof -i:<port>
