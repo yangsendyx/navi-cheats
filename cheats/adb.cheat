@@ -5,3 +5,6 @@ adb logcat -c
 
 # 打印 logcat 并输出至桌面 adb.log
 adb logcat > ~/Desktop/adb.log
+
+# 设备列表
+adb devices

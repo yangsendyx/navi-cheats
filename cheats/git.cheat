@@ -73,7 +73,7 @@ git merge <branch_name>
 git merge --abort
 
 # 合并指定commit到当前分支
-git cheery-pick <commit>
+git cherry-pick <commit>
 
 # 显示日志
 git log --all --decorate --oneline --graph --pretty=format:"%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(blue)%cn <%ae>%Creset %C(green)(%cd)%Creset" --abbrev-commit --date=format:"%Y/%m/%d %H:%M:%S"
