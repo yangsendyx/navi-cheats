@@ -1,4 +1,4 @@
-% my
+% ys
 
 # 按端口号筛选进程并杀掉
 lsof -i:<port> | awk 'NR>1 {print $0}' | fzf | awk '{print $2}' | xargs kill
@@ -8,9 +8,6 @@ ps aux | grep <process_name> | fzf | awk '{print $2}' | xargs kill
 
 # 列出指定端口进程
 lsof -i:<port>
-
-# 列出链接到指定端口的所有ip地址
-netstat -tn 2>/dev/null | grep :<port> | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head
 
 # 本机外网ip地址
 dig +short myip.opendns.com @resolver1.opendns.com
@@ -42,9 +39,12 @@ sudo chown -R $(whoami) <file_or_dirpath>
 # 压缩打包文件/文件夹
 tar czvf <filename>.tar.gz <files_or_dir>
 
-# 解压缩 .tar.gz 文件到当前目录
+# 解压 .tar.gz 文件到当前目录
 tar xzvf <targz_file>
 
 # 解压缩 .tar.gz 文件到指定目录
 tar xzvf <targz_file> -C <output_path>
+
+# ping 路由器
+ping 192.168.1.1
 
