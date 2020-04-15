@@ -48,3 +48,6 @@ tar xzvf <targz_file> -C <output_path>
 # ping 路由器
 ping 192.168.1.1
 
+# 用 vsc 打开文本文件
+open -a /Applications/Visual\ Studio\ Code.app <path>
+
