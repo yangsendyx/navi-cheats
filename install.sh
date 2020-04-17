@@ -8,14 +8,19 @@ if [ "$?" != "0" ]; then
     exit 127;
 fi;
 
-tarname="cheats.tar.gz";
-path="/usr/local/Cellar/navi/$(navi --version)/libexec";
-echo "navi path is: $path";
+# tarname="cheats.tar.gz";
+# version=$(navi --version);
+# echo $version;
+# path="/usr/local/Cellar/navi/${version: 5}/navi";
+# echo "navi path is: $path";
 
-tar czf ${tarname} ./cheats;
-rm -rf "$path/cheats";
-mv $tarname "$path/$tarname";
+# tar czf ${tarname} ./cheats;
+# rm -rf "$path/cheats";
+# mv $tarname "$path/$tarname";
 
-cd $path;
-tar xzf $tarname;
-rm -rf "$path/$tarname";
+# cd $path;
+# tar xzf $tarname;
+# rm -rf "$path/$tarname";
+
+cp -r ./cheats ./.cheats
+mv ./.cheats ~/.cheats
