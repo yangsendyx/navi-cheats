@@ -23,4 +23,5 @@ fi;
 # rm -rf "$path/$tarname";
 
 cp -r ./cheats ./.cheats
+rm -rf ~/.cheats
 mv ./.cheats ~/.cheats
