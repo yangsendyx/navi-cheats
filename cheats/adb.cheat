@@ -8,3 +8,9 @@ adb logcat > ~/Desktop/adb.log
 
 # 设备列表
 adb devices
+
+# 链接网易 mumu 模拟器
+adb connect localhost:22471 && adb devices && adb connect localhost:22471
+
+# 关闭服务
+adb kill-server
