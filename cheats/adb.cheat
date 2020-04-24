@@ -14,3 +14,9 @@ adb connect localhost:22471 && adb devices && adb connect localhost:22471
 
 # 关闭服务
 adb kill-server
+
+# 清除并打印 logcat
+adb logcat -c && rm -rf <logcat> && touch <logcat> && open -a <vscode> <logcat> && adb logcat > <logcat>
+
+$ logcat: echo "~/Desktop/adb.log"
+$ vscode: echo "/Applications/Visual\ Studio\ Code.app"
