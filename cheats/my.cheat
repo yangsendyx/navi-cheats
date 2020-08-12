@@ -51,3 +51,5 @@ ping 192.168.1.1
 # 用 vsc 打开文本文件
 open -a /Applications/Visual\ Studio\ Code.app <path>
 
+# RN 编译到ios设备
+react-native run-ios --device="<name>"
