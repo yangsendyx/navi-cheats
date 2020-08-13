@@ -52,4 +52,12 @@ ping 192.168.1.1
 open -a /Applications/Visual\ Studio\ Code.app <path>
 
 # RN 编译到ios设备
-react-native run-ios --device="<name>"
+react-native run-ios --device="<device>"
+
+# 关闭 flutter 所有服务
+ps aux | grep flutter | awk '{print $2}' | xargs kill -9
+
+# 拉取 flutter 包并重启 flutter
+flutter pub get && flutter run --enable-software-rendering
+
+$ device: ios-deploy -c | fzf | awk '{print $9}' | xargs echo
