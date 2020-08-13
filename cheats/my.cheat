@@ -60,4 +60,4 @@ ps aux | grep flutter | awk '{print $2}' | xargs kill -9
 # 拉取 flutter 包并重启 flutter
 flutter pub get && flutter run --enable-software-rendering
 
-$ device: ios-deploy -c | fzf | awk '{print $9}' | xargs echo
+$ device: ios-deploy -c | fzf | awk '{for(i=1;i<=NF;i++){ if($i == "a.k.a.") { print $(i+1) } }}' | xargs echo
