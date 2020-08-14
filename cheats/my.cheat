@@ -51,8 +51,10 @@ ping 192.168.1.1
 # 用 vsc 打开文本文件
 open -a /Applications/Visual\ Studio\ Code.app <path>
 
-# RN 编译到ios设备
-react-native run-ios --device="<device>"
+# rn-ios RN编译到ios设备
+react-native run-ios --device="<deviceIos>"
+# rn-and RN编译到Android设备
+adb -s <deviceAnd> install <apkPath>
 
 # 关闭 flutter 所有服务
 ps aux | grep flutter | awk '{print $2}' | xargs kill -9
@@ -60,4 +62,6 @@ ps aux | grep flutter | awk '{print $2}' | xargs kill -9
 # 拉取 flutter 包并重启 flutter
 flutter pub get && flutter run --enable-software-rendering
 
-$ device: ios-deploy -c | fzf | awk '{for(i=1;i<=NF;i++){ if($i == "a.k.a.") { print $(i+1) } }}' | xargs echo
+$ deviceIos: ios-deploy -c | fzf | awk '{for(i=1;i<=NF;i++){ if($i == "a.k.a.") { print $(i+1) } }}' | xargs echo
+$ deviceAnd: adb devices | fzf | awk '{print $1}' | xargs echo
+$ apkPath: ls ~/Desktop/app | fzf -q .apk | awk '{print "~/Desktop/app/"$1}' | xargs echo
