@@ -51,9 +51,9 @@ ping 192.168.1.1
 # 用 vsc 打开文本文件
 open -a /Applications/Visual\ Studio\ Code.app <path>
 
-# rn-ios RN编译到ios设备
+# rn-ios 编译 Debug 版到 ios 设备
 react-native run-ios --device="<deviceIos>"
-# rn-and RN编译到Android设备
+# rn-and 安装 apk 到已连接 Android 设备
 adb -s <deviceAnd> install <apkPath>
 
 # 关闭 flutter 所有服务
