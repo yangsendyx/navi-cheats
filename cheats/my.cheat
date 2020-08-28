@@ -62,6 +62,10 @@ ps aux | grep flutter | awk '{print $2}' | xargs kill -9
 # 拉取 flutter 包并重启 flutter
 flutter pub get && flutter run --enable-software-rendering
 
+# 杀掉 nginx 并重启
+sudo kill <nginxPid> && sudo nginx
+
 $ deviceIos: ios-deploy -c | fzf | awk '{for(i=1;i<=NF;i++){ if($i == "a.k.a.") { print $(i+1) } }}' | xargs echo
 $ deviceAnd: adb devices | fzf | awk '{print $1}' | xargs echo
 $ apkPath: ls ~/Desktop/app | fzf -q .apk | awk '{print "~/Desktop/app/"$1}' | xargs echo
+$ nginxPid: ps aux | grep nginx | fzf | awk '{print $2}' | xargs echo
