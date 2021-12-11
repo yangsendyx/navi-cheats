@@ -1,10 +1,10 @@
 % adb
 
 # 清除logcat
-adb logcat -c
+adb -s <devices> logcat -c
 
 # 打印 logcat 并输出至桌面 adb.log
-adb logcat > ~/Desktop/adb.log
+adb -s <devices> logcat > ~/Desktop/adb.log
 
 # 设备列表
 adb devices
@@ -16,7 +16,8 @@ adb connect localhost:22471 && adb devices && adb connect localhost:22471
 adb kill-server
 
 # 清除并打印 logcat
-adb logcat -c && rm -rf <logcat> && touch <logcat> && open -a <vscode> <logcat> && adb logcat > <logcat>
+adb -s <devices> logcat -c && rm -rf <logcat> && touch <logcat> && open -a <vscode> <logcat> && adb -s <devices> logcat > <logcat>
 
 $ logcat: echo "~/Desktop/adb.log"
 $ vscode: echo "/Applications/Visual\ Studio\ Code.app"
+$ devices: adb devices | fzf | awk '{print $1}' | xargs echo
