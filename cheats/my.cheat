@@ -65,6 +65,12 @@ flutter pub get && flutter run --enable-software-rendering
 # 杀掉 nginx 并重启
 sudo kill <nginxPid> && sudo nginx
 
+# 路由追踪 trip
+sudo trip <domain>
+
+# 路由追踪 系统
+traceroute <domain>
+
 $ deviceIos: ios-deploy -c | fzf | awk '{for(i=1;i<=NF;i++){ if($i == "a.k.a.") { print $(i+1) } }}' | xargs echo
 $ deviceAnd: adb devices | fzf | awk '{print $1}' | xargs echo
 $ apkPath: ls ~/Desktop/app | fzf -q .apk | awk '{print "~/Desktop/app/"$1}' | xargs echo
